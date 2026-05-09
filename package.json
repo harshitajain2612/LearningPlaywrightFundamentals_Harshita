@@ -1,7 +1,7 @@
 {
   "name": "learningplaywrightfundamentals",
   "version": "1.0.0",
-  "description": "",
+  "description": "A learning repository for mastering Playwright testing fundamentals with TypeScript.",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
@@ -10,6 +10,24 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0"
-  }
+    "@types/node": "^25.6.0",
+    "eslint": "^10.3.0",
+    "prettier": "^3.8.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "playwright-core": "^1.59.1",
+    "undici-types": "^7.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshitajain2612/LearningPlaywrightFundamentals_Harshita.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harshitajain2612/LearningPlaywrightFundamentals_Harshita/issues"
+  },
+  "homepage": "https://github.com/harshitajain2612/LearningPlaywrightFundamentals_Harshita#readme"
 }
