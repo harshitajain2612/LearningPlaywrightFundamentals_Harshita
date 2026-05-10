@@ -25,6 +25,8 @@ test("locators are lazy, strict, and auto-wait", async ({ page, context }) => {
 
     // await context.clearCookies();
 
+    //ntpmpbr10@emailgenerator.xyz
+
     console.log("Total cookies:", cookies.length);
 
     cookies.forEach(function (cookie) {
