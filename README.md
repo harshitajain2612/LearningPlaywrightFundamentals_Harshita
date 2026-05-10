@@ -58,8 +58,26 @@ npx playwright show-report
 │   │   ├── 217_Manual_Context_Options.spec.ts
 │   │   └── 218_Context_Reuse.spec.ts
 │   ├── 03_Locators_Commands/
+│   │   ├── 219_Commands.spec.ts
+│   │   ├── 220_GotoCommands.spec.ts
+│   │   ├── 221_Reffer_Command.spec.ts
+│   │   ├── 222_Automation.vwo.com.spec.ts
+│   │   ├── 223_Xpath.spec.ts
+│   │   ├── 224_GetRole.spec.ts
+│   │   ├── 225_CSS_Locators.spec.ts
+│   │   ├── 226_PressSequentially.spec.ts
+│   │   ├── 227_Cookie.spec.ts
+│   │   └── index.html
+│   ├── 04_Session_Storage/
+│   │   ├── 228_Session.spec.ts
+│   │   └── 229.TestVWo.spec.ts
+│   ├── 05_Allure_Reporting/
+│   │   └── 230_Login.spec.ts
 │   └── Tasks/
-│       └── AutomateCura.spec.ts
+│       └── VwoFreeTrial.spec.ts
+├── allure-results/
+├── playwright-report/
+├── test-results/
 ├── playwright.config.ts
 ├── package.json
 └── README.md
@@ -82,10 +100,25 @@ npx playwright show-report
 - **218_Context_Reuse.spec.ts** - Context reuse patterns
 
 ### 03_Locators_Commands
-- Additional locator and command examples (directory available for expansion)
+- **219_Commands.spec.ts** - Basic Playwright commands
+- **220_GotoCommands.spec.ts** - Navigation commands
+- **221_Reffer_Command.spec.ts** - Referrer command examples
+- **222_Automation.vwo.com.spec.ts** - VWO website automation
+- **223_Xpath.spec.ts** - XPath locator strategies
+- **224_GetRole.spec.ts** - Role-based locators
+- **225_CSS_Locators.spec.ts** - CSS selector strategies
+- **226_PressSequentially.spec.ts** - Sequential keyboard input
+- **227_Cookie.spec.ts** - Cookie management
+
+### 04_Session_Storage
+- **228_Session.spec.ts** - Session storage handling
+- **229.TestVWo.spec.ts** - VWO session storage tests
+
+### 05_Allure_Reporting
+- **230_Login.spec.ts** - Login automation with Allure reporting
 
 ### Tasks
-- **AutomateCura.spec.ts** - Real-world automation task example
+- **VwoFreeTrial.spec.ts** - Real-world VWO free trial automation task
 
 ## 🛠️ Configuration
 
@@ -93,10 +126,34 @@ Playwright configuration is defined in `playwright.config.ts`. Key settings incl
 - Test timeout settings
 - Browser types and launch options
 - Report generation options
+- Allure reporter integration
 
 ## 📊 Reports
 
+### Playwright Reports
 Test reports are generated in the `playwright-report/` directory after test execution. View reports using:
+
+```bash
+npx playwright show-report
+```
+
+### Allure Reports
+Allure test reports are generated in the `allure-results/` directory. View Allure reports using:
+
+```bash
+allure serve allure-results
+```
+
+## 🎯 Learning Topics Covered
+
+- ✅ Browser and Page Management
+- ✅ Context and Session Handling
+- ✅ Web Element Locators (CSS, XPath, Role-based)
+- ✅ User Interactions (Clicks, Input, Press Keys)
+- ✅ Navigation and Page References
+- ✅ Cookies and Session Storage
+- ✅ Test Annotations and Metadata
+- ✅ Allure Reporting Integration
 
 ```bash
 npx playwright show-report
