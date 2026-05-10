@@ -45,7 +45,11 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        /* Set viewport to Full HD (1920x1080) */
+        viewport: { width: 1920, height: 1080 }
+      },
     },
 
    // {
