@@ -1,0 +1,8 @@
+{
+  "vehicleName": "Creta",
+  "ownerName": "Harshita",
+  "regNumber": "MH-12-AB-2612",
+  "vehicleType": "Hatchback",
+  "year": "2016",
+  "notes": "Amzing car in a budget"
+}

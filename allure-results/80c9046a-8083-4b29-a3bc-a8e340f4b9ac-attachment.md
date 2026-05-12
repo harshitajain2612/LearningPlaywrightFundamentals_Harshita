@@ -1,0 +1,111 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 11_JS_Alerts\243_JS_Alert.spec.ts >> Javascript Alerts >> JS alert accept 1
+- Location: tests\11_JS_Alerts\243_JS_Alert.spec.ts:12:7
+
+# Error details
+
+```
+Error: expect(locator).toHaveText(expected) failed
+
+Locator:  locator('#result')
+Expected: "You successfully clicked an alert"
+Received: "You entered: null"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveText" with timeout 5000ms
+  - waiting for locator('#result')
+    9 × locator resolved to <p id="result">You entered: null</p>
+      - unexpected value "You entered: null"
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - link "Fork me on GitHub":
+      - /url: https://github.com/tourdedave/the-internet
+      - img "Fork me on GitHub" [ref=e5] [cursor=pointer]
+    - generic [ref=e7]:
+      - heading "JavaScript Alerts" [level=3] [ref=e8]
+      - paragraph [ref=e9]: Here are some examples of different JavaScript alerts which can be troublesome for automation
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - button "Click for JS Alert" [ref=e12] [cursor=pointer]
+        - listitem [ref=e13]:
+          - button "Click for JS Confirm" [ref=e14] [cursor=pointer]
+        - listitem [ref=e15]:
+          - button "Click for JS Prompt" [active] [ref=e16] [cursor=pointer]
+      - heading "Result:" [level=4] [ref=e17]
+      - paragraph [ref=e18]: "You entered: null"
+  - generic [ref=e20]:
+    - separator [ref=e21]
+    - generic [ref=e22]:
+      - text: Powered by
+      - link "Elemental Selenium" [ref=e23] [cursor=pointer]:
+        - /url: http://elementalselenium.com/
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect, type Dialog } from '@playwright/test';
+  2  | 
+  3  | test.describe('Javascript Alerts', () => {
+  4  | 
+  5  |   // Group the test cases together - describe
+  6  |   test.beforeEach(async ({ page }) => {
+  7  | 
+  8  |     await page.goto('https://the-internet.herokuapp.com/javascript_alerts');
+  9  | 
+  10 |   });
+  11 | 
+  12 |   test('JS alert accept 1', async ({ page }) => {
+  13 | 
+  14 |     page.once('dialog', async (dialog: Dialog) => {
+  15 | 
+  16 |         console.log('Alert Type : ' , dialog.type());
+  17 |         console.log('Alert Message:', dialog.message());
+  18 |         expect(dialog.message()).toBe('I am a JS Alert')
+  19 |         await dialog.accept();
+  20 |     }); //inbuild utiltity given by PW
+  21 | 
+  22 | await page.getByRole('button', { name: 'Click for JS Alert' }).click();
+  23 | await page.getByRole('button', { name: 'Click for JS Confirm' }).click();
+  24 | await page.getByRole('button', { name: 'Click for JS Prompt' }).click();
+  25 | 
+> 26 | await expect(page.locator('#result')).toHaveText('You successfully clicked an alert');
+     |                                       ^ Error: expect(locator).toHaveText(expected) failed
+  27 | 
+  28 |     // or
+  29 | 
+  30 |    // page.getByText('Click for JS Alert', { exact: true }).click();
+  31 | 
+  32 |     // page.getByText('Click for JS Confirm', { exact: true }).click();
+  33 | 
+  34 | 
+  35 |     // page.getByText('Click for JS Prompt', { exact: true }).click();
+  36 | 
+  37 |     await page.waitForTimeout(5000);
+  38 | 
+  39 |   });
+  40 | 
+  41 |   test('JS alert accept 2', async ({ page }) => {
+  42 | 
+  43 |   });
+  44 | 
+  45 |   test('JS alert accept 3', async ({ page }) => {
+  46 | 
+  47 |   });
+  48 | 
+  49 | });
+```
