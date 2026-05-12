@@ -73,11 +73,32 @@ npx playwright show-report
 │   │   └── 229.TestVWo.spec.ts
 │   ├── 05_Allure_Reporting/
 │   │   └── 230_Login.spec.ts
-│   └── Tasks/
-│       └── VwoFreeTrial.spec.ts
+│   ├── 07_WebTables/
+│   │   └── WebTables.spec.ts
+│   ├── 08_Web_Select_Frames_Iframe/
+│   │   └── WebSelectFrames.spec.ts
+│   ├── 09_Frmae_iframe/
+│   │   └── Frame_Iframe.spec.ts
+│   ├── 10_Keyboard/
+│   │   └── Keyboard.spec.ts
+│   ├── 11_JS_Alerts/
+│   │   └── JSAlerts.spec.ts
+│   ├── Multiple_Elements/
+│   │   └── MultipleElements.spec.ts
+│   ├── Projects/
+│   │   ├── Project_5_QAProfileForm/
+│   │   │   └── FillQAProfileForm.spec.ts
+│   │   ├── Project_7_HoverMenu/
+│   │   │   └── HoverMenu&VerifyJSresult.spec.ts
+│   │   └── [Additional Projects]
+│   ├── Tasks/
+│   │   └── VwoFreeTrial.spec.ts
+│   └── utils/
 ├── allure-results/
 ├── playwright-report/
 ├── test-results/
+├── tta-report/
+├── CustomTTAReporter.ts
 ├── playwright.config.ts
 ├── package.json
 └── README.md
@@ -117,8 +138,32 @@ npx playwright show-report
 ### 05_Allure_Reporting
 - **230_Login.spec.ts** - Login automation with Allure reporting
 
-### Tasks
-- **VwoFreeTrial.spec.ts** - Real-world VWO free trial automation task
+### 07_WebTables
+- **WebTables.spec.ts** - Web table interaction and data extraction
+
+### 08_Web_Select_Frames_Iframe
+- **WebSelectFrames.spec.ts** - HTML select elements and frame handling
+
+### 09_Frmae_iframe
+- **Frame_Iframe.spec.ts** - Iframe and frame navigation
+
+### 10_Keyboard
+- **Keyboard.spec.ts** - Keyboard input and event handling
+
+### 11_JS_Alerts
+- **JSAlerts.spec.ts** - JavaScript alerts, dialogs, and confirmations
+
+### Multiple_Elements
+- **MultipleElements.spec.ts** - Handling multiple web elements and interactions
+
+### Projects
+Real-world automation projects demonstrating end-to-end testing scenarios:
+
+#### Project_5_QAProfileForm
+- **FillQAProfileForm.spec.ts** - Form filling and validation for QA profile forms
+
+#### Project_7_HoverMenu
+- **HoverMenu&VerifyJSresult.spec.ts** - Hover menu interactions and JSON verification from page output
 
 ## 🛠️ Configuration
 
@@ -144,6 +189,9 @@ Allure test reports are generated in the `allure-results/` directory. View Allur
 allure serve allure-results
 ```
 
+### Custom TTA Reporter
+The project includes a custom TTA (The Testing Academy) reporter (`CustomTTAReporter.ts`) for enhanced test reporting capabilities. Reports are generated in the `tta-report/` directory.
+
 ## 🎯 Learning Topics Covered
 
 - ✅ Browser and Page Management
@@ -154,6 +202,16 @@ allure serve allure-results
 - ✅ Cookies and Session Storage
 - ✅ Test Annotations and Metadata
 - ✅ Allure Reporting Integration
+- ✅ Web Table Handling
+- ✅ Frame and Iframe Navigation
+- ✅ HTML Select Elements
+- ✅ Keyboard Events and Input
+- ✅ JavaScript Alerts and Dialogs
+- ✅ Hover Menu Interactions
+- ✅ JSON Data Verification
+- ✅ Form Filling and Validation
+- ✅ Multiple Element Handling
+- ✅ End-to-End Testing Scenarios
 
 ```bash
 npx playwright show-report
